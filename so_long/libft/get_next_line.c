@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmiasnik <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: dmiasnik <dmiasnik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:36:30 by dmiasnik          #+#    #+#             */
-/*   Updated: 2023/10/17 12:38:40 by dmiasnik         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:55:50 by dmiasnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,26 +98,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-/*
-#include <fcntl.h>
-int main(int q, char *a[])
-{
-	//char * t = get_next_line(0);
-	//if (t)
-	//	write(1, t, ft_strlen(t));
-
-	int f = open(a[1], 0);
-	char *t = get_next_line(f);
-	while (t)
-	{
-		write(1, t, ft_strlen(t));
-		t = get_next_line(f);
-	}
-
-	//t = get_next_line(f);
-	//if (t)
-	//	write(1, t, ft_strlen(t));
-
-	close(f);
-	return 0;
-}*/

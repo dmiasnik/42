@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dmiasnik <dmiasnik@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/13 14:51:30 by dmiasnik          #+#    #+#              #
-#    Updated: 2023/11/15 14:42:41 by dmiasnik         ###   ########.fr        #
+#    Created: 2024/01/03 14:02:32 by dmiasnik          #+#    #+#              #
+#    Updated: 2024/01/06 15:20:32 by dmiasnik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
 OPT = -Lminilibx -lmlx -framework OpenGL -framework AppKit
-SRC = source/so_long.c source/map.c source/move.c
+SRC = source/so_long.c source/map.c source/move.c source/image.c 
 OBJ = $(SRC:.c=.o)
 
 all:	$(NAME)
@@ -25,14 +25,12 @@ $(NAME):	$(OBJ)
 	@make -C ./libft
 	@make -C ./minilibx
 	gcc $(FLAGS) libft/libft.a $(OPT) $(OBJ) -o $(NAME)
-
-bonus:
-	@make -C ./libft
-	gcc $(FLAGS) libft/libft.a $(OBJ) -o $(NAME)
+	
+bonus:	$(NAME)
 
 clean:	
 	@make clean -C ./libft
-#	@make clean -C ./minilibx
+	@make clean -C ./minilibx
 	rm -f $(OBJ) 
 
 fclean: clean
